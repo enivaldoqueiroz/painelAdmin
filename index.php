@@ -22,7 +22,9 @@
     <div class="container-fluid">
     
     <?php    
-    require('./pag/login.php');    
+    require('./pag/login.php'); 
+    $Conecta = new conecta;
+    var_dump ($Conecta);   
     ?>
 
 
