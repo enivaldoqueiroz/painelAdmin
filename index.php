@@ -23,8 +23,9 @@
     
     <?php    
     require('./pag/login.php'); 
-    $Conecta = new conecta;
-    var_dump ($Conecta);   
+    $Conn = new conecta;
+    $Conn::Conn();
+    var_dump ($Conn);   
     ?>
 
 
