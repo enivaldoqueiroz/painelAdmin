@@ -24,6 +24,16 @@
     <?php    
     require('./pag/login.php'); 
 
+    //Testando a exclusão de dados no banco de dados
+    $Termos = "WHERE user_id = 1";
+    $Up = new delete();
+    $Up-> Query('Users', $Termos);
+    
+    echo " {$Up->getResultados()} Resultado(s) Deletado(s) ";
+
+        
+    
+    /*
     //Testando a atulização das informações no banco de dados
     $Dados = "user_email = 'deu@certo.com', user_nome = 'Deu Certo da Costa', user_senha = 'deu_certo'";
     $Termos = "WHERE user_id < 10";
@@ -32,9 +42,8 @@
     
     echo " {$Up->getResultados()} Resultado(s) Atulizados(s) ";
 
-        
-    
-    /*
+
+
     //Testando a inserção no banco de dados
         $Criar = new criar;
         $Colunas = " user_nome, user_email, user_senha ";
