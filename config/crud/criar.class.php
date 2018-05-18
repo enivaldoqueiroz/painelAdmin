@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Classe responsavel por fazer leituras no banco de dados
+ * Classe responsavel por fazer inserção no banco de dados
  */
 
 

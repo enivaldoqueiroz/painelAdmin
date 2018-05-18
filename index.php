@@ -24,38 +24,44 @@
     <?php    
     require('./pag/login.php'); 
 
-    //Instanciando o obejto conecta para verificação da conecção do banco de dados 
-    /** 
-    $Conn = new conecta;
-    $Conn::Conn();
-    var_dump ($Conn);  
-    */
+    //Testando a atulização das informações no banco de dados
+    $Dados = "user_email = 'deu@certo.com', user_nome = 'Deu Certo da Costa', user_senha = 'deu_certo'";
+    $Termos = "WHERE user_id < 10";
+    $Up = new atualizar();
+    $Up-> Query('Users', $Dados, $Termos);
+    
+    echo " {$Up->getResultados()} Resultado(s) Atulizados(s) ";
 
-    //Instanciando o obejto ler  
-    $Ler = new ler;
-    $Ler->Query("Users");
-
-    //Testando a inserção no banco de dados
-    $Criar = new criar;
-    $Colunas = " user_nome, user_email, user_senha ";
-    $Valor = " 'Rodrigo', 'rodrigo@rodrigo.com.br', '112233' ";
-    $Criar->Query('Users', $Colunas, $Valor);
-    var_dump($Criar->getResultados());
-
-    //Users (user_id, user_nome, user_email, user_senha) VALUES ('2', 'Marcos', 'marcos@marcos.com.br', '112233');
+        
     
     /*
+    //Testando a inserção no banco de dados
+        $Criar = new criar;
+        $Colunas = " user_nome, user_email, user_senha ";
+        $Valor = " 'Rodrigo', 'rodrigo@rodrigo.com.br', '112233' ";
+        $Criar->Query('Users', $Colunas, $Valor);
+        var_dump($Criar->getResultados());
 
-    
-    //Testando a Leitura do banco de dados
-    //extrair os resultados
-    $User = $Ler->getResultados() [0];
-    extract($User);
-    echo '<hr>';
-    echo "Meu nome é {$user_nome} estou cadastrado com e-mail {$user_email} minha senha é {$user_senha}";
+    //Instanciando o obejto ler  
+        $Ler = new ler;
+        $Ler->Query("Users");
+        //Testando a Leitura do banco de dados
+        //extrair os resultados
+        $User = $Ler->getResultados() [0];
+        extract($User);
+        echo '<hr>';
+        echo "Meu nome é {$user_nome} estou cadastrado com e-mail {$user_email} minha senha é {$user_senha}";
 
     //echo '<pre>';
     //var_dump($Ler->getResultados()[0] ["user_nome"]);
+
+    //Instanciando o obejto conecta para verificação da conecção do banco de dados 
+        $Conn = new conecta;
+        $Conn::Conn();
+        var_dump ($Conn);  
+        
+
+
     */
     
     ?>
