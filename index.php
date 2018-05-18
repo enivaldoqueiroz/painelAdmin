@@ -23,9 +23,27 @@
     
     <?php    
     require('./pag/login.php'); 
+
+    //Instanciando o obejto conecta para verificação da conecção do banco de dados 
+    /** 
     $Conn = new conecta;
     $Conn::Conn();
-    var_dump ($Conn);   
+    var_dump ($Conn);  
+    */
+
+    //Instanciando o obejto ler  
+    $Ler = new ler;
+    $Ler->Query("Users");
+    //extrair os resultados
+    $User = $Ler->getResultados() [0];
+    extract($User);
+    echo '<hr>';
+    echo "Meu nome é {$user_nome} estou cadastrado com e-mail {$user_email} minha senha é {$user_senha}";
+
+    //echo '<pre>';
+    //var_dump($Ler->getResultados()[0] ["user_nome"]);
+
+    
     ?>
 
 
