@@ -34,6 +34,20 @@
     //Instanciando o obejto ler  
     $Ler = new ler;
     $Ler->Query("Users");
+
+    //Testando a inserção no banco de dados
+    $Criar = new criar;
+    $Colunas = " user_nome, user_email, user_senha ";
+    $Valor = " 'Rodrigo', 'rodrigo@rodrigo.com.br', '112233' ";
+    $Criar->Query('Users', $Colunas, $Valor);
+    var_dump($Criar->getResultados());
+
+    //Users (user_id, user_nome, user_email, user_senha) VALUES ('2', 'Marcos', 'marcos@marcos.com.br', '112233');
+    
+    /*
+
+    
+    //Testando a Leitura do banco de dados
     //extrair os resultados
     $User = $Ler->getResultados() [0];
     extract($User);
@@ -42,7 +56,7 @@
 
     //echo '<pre>';
     //var_dump($Ler->getResultados()[0] ["user_nome"]);
-
+    */
     
     ?>
 
